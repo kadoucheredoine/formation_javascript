@@ -1,12 +1,14 @@
 <html>
      <head>
             <title>بسم الله </title>
-     </head>
-      <body>
-           <h1>بسم الله الرحمن الرحيم</h1>
             <script>
-                document.writeln("il est "+new Date());
+               function init(){
+            document.getElementById("date").innerHTML="il est "+new Date()
+               }
             </script>
-
+     </head>
+      <body onload="init()">
+           <h1>بسم الله الرحمن الرحيم</h1>
+           <div id="date"></div> 
       </body>
 </html>
