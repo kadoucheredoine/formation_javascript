@@ -10,14 +10,33 @@
     <!--  var local, let block, aucun pour global-->
     <script>
       function select() {
-        return arguments[1] || arguments[2]|| 10;
+        return arguments[0] && arguments[1] && "vectoire"
       }
       //one
 
-      alert(select("",45));
+      alert(select("",false));
       //two
 
-      alert(select("",0));
+      alert(select(null,15));
+
+      //three
+      alert(select(19,15));
+
+
+      //sercuit 
+
+       function A(){
+          console.log("execution A")
+          return 0;
+       }
+
+       function B(){
+          console.log("execution B")
+          return 96;
+       }
+
+       console.log(A() && B())
+
     </script>
   </body>
 </html>
