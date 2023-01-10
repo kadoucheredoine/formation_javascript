@@ -7,27 +7,18 @@
   <body>
     <h1>بسم الله الرحمن الرحيم</h1>
     <div id="date"></div>
-    <!--  var local, let block, aucun pour global-->
+   
     <script>
-      // calcul IMC 
-      console.log("calcule IMC = poids / taille ^ taille")
-      var poids = prompt("donnez le poids")||0;
-      var taille = prompt("donnez la taille")||1;
-      function imc(){
-           return poids / Math.pow(taille,2)
-
-      }
-    var imc =  imc(poids,taille)
-      if(imc <18.5){
-          console.log("ATTENTION VOUS ETES SOUSPOIDS "+imc)
-      }else if(imc(poids,taille)>25){
-          console.log("ATTENTION VOUS ETES SURPOIDS "+imc)
-
-      }else{
-          console.log("votre corpulence est NORMLE")
-      }
-
-      
+     //opérateur === ou typeof
+     function existe(tab, x){
+          for(i=tab.length-1;i>0;i--){
+              if(typeof tab[i]== typeof x)
+              if(tab[i]===x)
+                return i
+          }
+     }
+     existe([5,9,8,0,8,7,""],0)
+     console.log(i)
     </script>
   </body>
 </html>
