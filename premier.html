@@ -9,14 +9,16 @@
     <div id="date"></div>
 
     <script>
-     "use strict"
-       function test(){
-         
-          aa = 10;
-       }
-
-       test();
-    
+     'use strict'
+      var unePersone = {
+        name : "yazid",
+        lastname: "tak",
+        berthday: "01/0/01987",
+        salut : function(){
+           return "salam alycom "+ unePersone.name
+        }
+      };
+      console.log(unePersone.salut() +" "+unePersone.lastname +" né le "+unePersone.berthday)
     </script>
   </body>
 </html>
