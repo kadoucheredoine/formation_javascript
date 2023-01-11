@@ -9,22 +9,23 @@
     <div id="date"></div>
 
     <script>
-     'use strict'
-      var unePersone = {
-        name : "yazid",
-        lastname: "tak",
-        berthday: "01/0/01987",
-        salut : function(){
-           return "salam alycom "+ unePersone.name
-        }
+      "use strict";
+      var Person = function (name, lastname, date) {
+        this.name = name;
+        this.lastname = lastname;
+        this.date = date;
+        this.salut = function () {
+          console.log(this.name + " " + this.lastname + " né le " + this.date);
+        };
       };
-      console.log(unePersone.salut() +" "+unePersone["lastname"] +" né le "+unePersone.berthday)
 
-      //parcourir tableau associatif 
-        for( var a in unePersone){
-          console.log(unePersone[a])
-        }
+      Person.prototype.message = function (de) {
+        console.log("message de " + de + " vers " + this.lastname);
+      };
 
+      var unePersone = new Person("yazid", "tak", "01/01/1987");
+      unePersone.message("redoine");
+      unePersone.salut();
     </script>
   </body>
 </html>
