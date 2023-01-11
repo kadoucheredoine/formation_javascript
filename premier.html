@@ -18,7 +18,13 @@
            return "salam alycom "+ unePersone.name
         }
       };
-      console.log(unePersone.salut() +" "+unePersone.lastname +" né le "+unePersone.berthday)
+      console.log(unePersone.salut() +" "+unePersone["lastname"] +" né le "+unePersone.berthday)
+
+      //parcourir tableau associatif 
+        for( var a in unePersone){
+          console.log(unePersone[a])
+        }
+
     </script>
   </body>
 </html>
