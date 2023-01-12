@@ -9,20 +9,25 @@
     <div id="date"></div>
 
     <script>
-      function Personne(nom, prenom) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.bonjour = function () {
-          alert("bonjour " + this.prenom);
-        };
-      }
-      function Chien(prenom) {
-        this.prenom = prenom;
-      }
-      var p = new Personne("brillant", "alexandre");
-      var c = new Chien("tobby");
-      c.bonjour = p.bonjour;
-      c.bonjour();
+      // operations sur la chaine String
+      var string = "salam alycom ";
+      console.log("length : " + string.length);
+      console.log("substring : " + string.substring(0, 5));
+      console.log("endsWith m : " + string.endsWith("m "));
+      console.log(string.startsWith("sa"));
+      console.log(string.toLowerCase());
+      console.log(string.toUpperCase());
+      console.log(string.indexOf("al"));
+      console.log(string.split(" "));
+      console.log(string.charAt(8));
+      console.log(string.match("^\\w+"));
+      //...
+
+      String.prototype.optest = function () {
+        if (this.length > 5) return this.substring(0, 5).toUpperCase();
+      };
+
+      console.log(string.optest())
     </script>
   </body>
 </html>
