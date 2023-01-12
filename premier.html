@@ -10,35 +10,42 @@
 
     <script>
       // operations sur la chaine String
-      var Book = function (title, isbn, datePublication) {
-        this.title = title;
-        this.isbn = isbn;
-        this.datePublication = datePublication;
-
-        this.emprint = function () {
-          //après traitement
-          return true;
-        };
+      var SString = function (string) {
+        this.string = string;
       };
 
-      Book.prototype.edit = function () {
-        console.log(
-          "livre de " +
-            this.title +
-            "  isbn = " +
-            this.isbn +
-            "  crée le " +
-            this.datePublication
-        );
+      SString.prototype.size = function () {
+        return this.string.length;
+      };
+      SString.prototype.edit = function () {
+        console.log(this.string);
       };
 
-      var theBook = new Book(
-        "debuter ave javascript",
-        "15-456-489-59",
-        "01/05/2018"
-      );
+      SString.prototype.startWith = function (str) {
+        re = new RegExp("^" + str);
+        if (re.test(this.string)) return true;
+        else return false;
+      };
 
-      theBook.edit();
+      SString.prototype.charAt = function (char){
+          var tString =this.string.split("")
+          for(var i=0;i<tString.length;i++){
+               if(char===tString[i])
+                  return i;
+          }
+      }
+
+      SString.prototype.reverse = function(){
+          var tString =this.string.split("")
+          var rest ="";
+          for(i =tString.length-1;i>0;i--)
+             rest+=tString[i]
+          return rest
+      }
+
+      var string = new SString("salam alycom");
+      string.edit();
+      console.log(string.reverse());
     </script>
   </body>
 </html>
