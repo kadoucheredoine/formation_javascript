@@ -10,24 +10,35 @@
 
     <script>
       // operations sur la chaine String
-      var string = "salam alycom ";
-      console.log("length : " + string.length);
-      console.log("substring : " + string.substring(0, 5));
-      console.log("endsWith m : " + string.endsWith("m "));
-      console.log(string.startsWith("sa"));
-      console.log(string.toLowerCase());
-      console.log(string.toUpperCase());
-      console.log(string.indexOf("al"));
-      console.log(string.split(" "));
-      console.log(string.charAt(8));
-      console.log(string.match("^\\w+"));
-      //...
+      var Book = function (title, isbn, datePublication) {
+        this.title = title;
+        this.isbn = isbn;
+        this.datePublication = datePublication;
 
-      String.prototype.optest = function () {
-        if (this.length > 5) return this.substring(0, 5).toUpperCase();
+        this.emprint = function () {
+          //après traitement
+          return true;
+        };
       };
 
-      console.log(string.optest())
+      Book.prototype.edit = function () {
+        console.log(
+          "livre de " +
+            this.title +
+            "  isbn = " +
+            this.isbn +
+            "  crée le " +
+            this.datePublication
+        );
+      };
+
+      var theBook = new Book(
+        "debuter ave javascript",
+        "15-456-489-59",
+        "01/05/2018"
+      );
+
+      theBook.edit();
     </script>
   </body>
 </html>
