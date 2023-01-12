@@ -2,50 +2,26 @@
   <head>
     <title>بسم الله</title>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>  -->
-    <script type="text/javascript" src="date.js"></script>
+    <!-- <script type="text/javascript" src="date.js"></script> -->
   </head>
   <body>
     <h1>بسم الله الرحمن الرحيم</h1>
     <div id="date"></div>
 
     <script>
-      // operations sur la chaine String
-      var SString = function (string) {
-        this.string = string;
-      };
+       // operations sur la chaine Array
+      (function(){
+       var b = [1, 5, "d", 0];
+       var a = new Array(1,3,4)
+       var c = a + b;
+       console.log(a);
 
-      SString.prototype.size = function () {
-        return this.string.length;
-      };
-      SString.prototype.edit = function () {
-        console.log(this.string);
-      };
-
-      SString.prototype.startWith = function (str) {
-        re = new RegExp("^" + str);
-        if (re.test(this.string)) return true;
-        else return false;
-      };
-
-      SString.prototype.charAt = function (char){
-          var tString =this.string.split("")
-          for(var i=0;i<tString.length;i++){
-               if(char===tString[i])
-                  return i;
-          }
-      }
-
-      SString.prototype.reverse = function(){
-          var tString =this.string.split("")
-          var rest ="";
-          for(i =tString.length-1;i>0;i--)
-             rest+=tString[i]
-          return rest
-      }
-
-      var string = new SString("salam alycom");
-      string.edit();
-      console.log(string.reverse());
+       //ajout
+       a.push("sufix");console.log(a);// add in end array
+       a.unshift("prefix");console.log(a); // add in first index
+       a.pop();console.log(a);   // remove the end caracter
+       a.shift() ;console.log(a);  // remove the first cracter
+     })()
     </script>
   </body>
 </html>
