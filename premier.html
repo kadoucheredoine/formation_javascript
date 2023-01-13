@@ -9,19 +9,22 @@
     <div id="date"></div>
 
     <script>
-       // operations sur la chaine Array
-      (function(){
-       var b = [1, 5, "d", 0];
-       var a = new Array(1,3,4)
-       var c = a + b;
-       console.log(a);
+      function Personne(nom, prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
 
-       //ajout
-       a.push("sufix");console.log(a);// add in end array
-       a.unshift("prefix");console.log(a); // add in first index
-       a.pop();console.log(a);   // remove the end caracter
-       a.shift() ;console.log(a);  // remove the first cracter
-     })()
+        if (!Personne.prototype.bonjour) {
+          Personne.prototype.bonjour = function () {
+            return "salam " + this.prenom;
+          };
+        }
+      }
+
+      var p1 = new Personne("yazid", "tak");
+      var p2 = new Personne("redoin     ", "kadouch");
+      console.log(p1.bonjour());
+      console.log(p2.bonjour());
+      alert(p1.bonjour === p2.bonjour);
     </script>
   </body>
 </html>
