@@ -9,34 +9,48 @@
     <div id="date"></div>
 
     <script>
-      // heritage
-
-      Object.prototype.herite = function (parent, child, params) {
-        parent.apply(this, params);
-        for (var m in parent.prototype) {
-          child.prototype[m] = parent.prototype[m];
+      var Surface = (() => {
+        //partie privé
+        function surfaceRect(height, withh) {
+          return height * withh;
         }
-      };
 
-      function Personne(nom, prenom) {
-        this.nom = nom;
-        this.prenom = prenom;
-        if (!Personne.prototype.bonjour) {
-          Personne.prototype.bonjour = function () {
-            alert("Bonjour " + this.prenom);
+        function sufaceCarree(cote) {
+          return cote * cote;
+        }
+
+        function aire() {
+          if (arguments.length == 1) return sufaceCarree(arguments[0]);
+          else return surfaceRect(arguments[0], arguments[1]);
+        }
+
+        //partie public
+        function instance() {
+          return {
+            height: "",
+            withh: "",
+            setHeight: function () {
+              this.height = arguments[0];
+            },
+            setWith: function () {
+              this.withh = arguments[0];
+            },
+
+            surface: function () {
+              return aire(this.height, this.withh);
+            },
           };
         }
-      }
 
-      function Employer(nom, prenom, post) {
-        this.herite(Personne, Employer, arguments);
-        this.post = post;
-      }
+        var fact ={}
+        fact.instance = instance
+        return fact;
+      })();
+      var s1 =Surface.instance()
 
-      var p1 = new Personne("brillant", "alexandre");
-      p1.bonjour();
-      var e1 = new Employer("dupont", "jean", "dentiste");
-      e1.bonjour();
+      s1.setHeight(16);
+      s1.setWith(190);
+      console.log(s1.surface());
     </script>
   </body>
 </html>
