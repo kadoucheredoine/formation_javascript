@@ -9,22 +9,34 @@
     <div id="date"></div>
 
     <script>
+      // heritage
+
+      Object.prototype.herite = function (parent, child, params) {
+        parent.apply(this, params);
+        for (var m in parent.prototype) {
+          child.prototype[m] = parent.prototype[m];
+        }
+      };
+
       function Personne(nom, prenom) {
         this.nom = nom;
         this.prenom = prenom;
-
         if (!Personne.prototype.bonjour) {
           Personne.prototype.bonjour = function () {
-            return "salam " + this.prenom;
+            alert("Bonjour " + this.prenom);
           };
         }
       }
 
-      var p1 = new Personne("yazid", "tak");
-      var p2 = new Personne("redoin     ", "kadouch");
-      console.log(p1.bonjour());
-      console.log(p2.bonjour());
-      alert(p1.bonjour === p2.bonjour);
+      function Employer(nom, prenom, post) {
+        this.herite(Personne, Employer, arguments);
+        this.post = post;
+      }
+
+      var p1 = new Personne("brillant", "alexandre");
+      p1.bonjour();
+      var e1 = new Employer("dupont", "jean", "dentiste");
+      e1.bonjour();
     </script>
   </body>
 </html>
