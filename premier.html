@@ -2,55 +2,29 @@
   <head>
     <title>بسم الله</title>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>  -->
-    <!-- <script type="text/javascript" src="date.js"></script> -->
+    <script>
+     var figure = {
+       centre: function () {
+         return [(this.x - this.largeur) / 2, (this.y - this.hauteur) / 2];
+       },
+     };
+     </script>
+    
+    <script type="text/javascript" src="date.js"></script>
   </head>
   <body>
     <h1>بسم الله الرحمن الرحيم</h1>
     <div id="date"></div>
 
     <script>
-      var Surface = (() => {
-        //partie privé
-        function surfaceRect(height, withh) {
-          return height * withh;
-        }
+      var figure = {
+        centre: function () {
+          return [(this.x - this.largeur) / 2, (this.y - this.hauteur) / 2];
+        },
+      };
 
-        function sufaceCarree(cote) {
-          return cote * cote;
-        }
-
-        function aire() {
-          if (arguments.length == 1) return sufaceCarree(arguments[0]);
-          else return surfaceRect(arguments[0], arguments[1]);
-        }
-
-        //partie public
-        function instance() {
-          return {
-            height: "",
-            withh: "",
-            setHeight: function () {
-              this.height = arguments[0];
-            },
-            setWith: function () {
-              this.withh = arguments[0];
-            },
-
-            surface: function () {
-              return aire(this.height, this.withh);
-            },
-          };
-        }
-
-        var fact ={}
-        fact.instance = instance
-        return fact;
-      })();
-      var s1 =Surface.instance()
-
-      s1.setHeight(16);
-      s1.setWith(190);
-      console.log(s1.surface());
+      var f = new Figure(10, 10, 100, 100);
+      alert(f.centre());
     </script>
   </body>
 </html>
