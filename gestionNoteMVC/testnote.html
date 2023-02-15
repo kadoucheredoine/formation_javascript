@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+    <script type="text/javascript" src="note.js"></script>
+  </head>
+  <body>
+    <h1>Notes</h1>
+    <div id="notesVue"></div>
+    <a
+      href="#"
+      onClick="notes.addItem();return false"
+      >Ajouter</a
+    >
+    <select onchange="notes.selectVue(this.selectedIndex)">
+         <option value="0"> par defaut</option>
+         <option value="1">Autre</option>
+    </select>
+  </body>
+</html>

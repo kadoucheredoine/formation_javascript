@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<script src="MooTools-Core-1.6.0.js"></script>
+		<script>
+var Personne = new Class( 
+  { 
+    initialize : function( nom, prenom ) { 
+      this.nom = nom; 
+      this.prenom = prenom; 
+    } , 
+    bonjour : function() { 
+      alert( "Bonjour " + this.prenom ); 
+    } 
+  } 
+ ); 
+ 
+var Employe = new Class( { 
+  Extends : Personne, 
+  initialize : function( nom, prenom, poste ) { 
+    this.parent( nom, prenom ); 
+    this.poste = poste; 
+  }, 
+  bonjour : function() { 
+    this.parent(); 
+     alert( "Vous êtes " + this.poste ); 
+  } 
+} ); 
+ 
+var e = new Employe( "brillant", "alexandre", "developpeur" ); 
+e.bonjour();
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

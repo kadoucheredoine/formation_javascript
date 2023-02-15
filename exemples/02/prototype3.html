@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<script src="prototype.js"></script>
+		<script>
+		
+var peutManger = { 
+  manger : function() {  
+    alert( "miam" ); 
+  } 
+};  
+var Personne = Class.create( 
+{ 
+  initialize : function( nom, prenom ) { 
+    this.nom = nom; 
+    this.prenom = prenom; 
+  }, 
+  bonjour : function() { 
+    alert( "Bonjour " + this.prenom ); 
+  },  
+},   
+ peutManger 
+); 
+ 
+var Employe = Class.create(  
+  Personne, 
+  { 
+    initialize : function( $super, nom, prenom, poste ) { 
+      $super( nom, prenom ); 
+      this.poste = poste; 
+    }, 
+    bonjour : function( $super ) { 
+      $super(); 
+      alert( "Vous êtes " + this.poste ); 
+    } 
+  } 
+ ); 
+ 
+var Animal = Class.create( 
+  peutManger 
+); 
+  
+var p = new Personne( "brillant", "alexandre" ); 
+p.manger(); 
+ 
+var e = new Employe( "brillant", "alexandre", "developpeur" ); 
+e.bonjour(); 
+e.manger(); 
+ 
+var a = new Animal(); 
+a.manger();
+
+
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

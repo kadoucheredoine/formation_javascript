@@ -1,0 +1,23 @@
+<html> 
+  <head> 
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script> <script type="text/javascript" src="../dojo-release-1.8.0/dojo/
+dojo.js"></script> 
+    <script type="text/javascript"> 
+      function lectureAjax() { 
+        require( [ "dojo/_base/xhr" ], 
+          function( xhr ) { 
+            xhr.get( { 
+              url : "ajax.dat", 
+              load : function( res ) { 
+                alert( res ); 
+              } 
+            } ); 
+          } ); 
+      }; 
+    </script> 
+  </head> 
+  <body> 
+  <div onclick='lectureAjax()'>Lecture AJAX</div> 
+  </body> 
+  </body> 
+</html>

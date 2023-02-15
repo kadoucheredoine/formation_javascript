@@ -1,0 +1,26 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script> 
+    <script type="text/javascript"> 
+      require( ["dojo/dom", "dojo/dom-construct", "dojo/domReady!" ], 
+        function( dom, dc ) {           
+          var node = dom.byId( "alternance" ); 
+          dc.empty( "items" ); 
+          var couleurs = [ "red", "green", "blue" ]; 
+          for ( var i = 0; i < couleurs.length; i++ ) { 
+            var n = dc.create( "div", null ); 
+            n.style.backgroundColor = couleurs[ i ]; 
+            n.innerHTML = couleurs[ i ]; 
+            dc.place( n, "items", "last" ); 
+          } 
+        } 
+      ); 
+    </script> 
+  </head> 
+  <body> 
+   Table de couleur :
+   <div id="items"> 
+   Couleurs 
+   </div>    
+  </body> 
+</html>

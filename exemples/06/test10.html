@@ -1,0 +1,39 @@
+<html> 
+<head> 
+    <meta http-equiv="content-type" content="text/html; 
+charset=UTF-8" /> 
+ 
+    <script type="text/javascript"> 
+ 
+    var requete = null; 
+ 
+    function lectureAjax() { 
+      try { 
+        requete = new XMLHttpRequest(); 
+      } catch( e ) { // Cas IE7
+        requete = new ActiveXObject( "Msxml2.XMLHTTP" ); 
+      } 
+ 
+      requete.onreadystatechange = traiterReponse; 
+      // Lecture du fichier ajax.dat 
+      requete.open( "GET", "ajax.txt", false ); 
+      // Nous n'avons pas de paramètre 
+      requete.send( null ); 
+ 
+    } 
+ 
+    function traiterReponse() { 
+      // La réponse est là 
+      if ( requete.status == 200 && requete.readyState == 4 ) { 
+        alert( requete.responseText ); 
+      } 
+    } 
+ 
+    </script> 
+ 
+</head> 
+ 
+  <body> 
+    <div onclick='lectureAjax()'>Lecture AJAX</div> 
+  </body> 
+</html>

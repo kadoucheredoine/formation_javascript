@@ -1,0 +1,29 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="jquery-1.8.1.js"></script> 
+    <script type="text/javascript"> 
+$( document ).ready(  
+    function() { 
+      var tab = [ "rouge", "vert", "bleu" ]; 
+      $.each( tab, 
+        function() { 
+          var couleur = this; 
+          alert( couleur ); 
+        } 
+      ); 
+      $( "span" ).each( function() { 
+        var couleur = $( this ).text(); 
+        alert( couleur ); 
+      } ); 
+   } 
+); 
+  </script> 
+  </head> 
+  <body> 
+    <div> 
+      <span>ROUGE</span> 
+      <span>VERT</span> 
+      <span>BLEU</span> 
+    </div> 
+  </body> 
+</html>

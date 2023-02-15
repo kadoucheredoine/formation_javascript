@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script>
+function Personne( nom, prenom ) { 
+  this.nom = nom; 
+  this.prenom = prenom; 
+  this.bonjour = function() { 
+    alert( "Bonjour " + this.prenom ); 
+  } 
+} 
+ 
+var p = new Personne( "brillant", "alexandre" ); 
+p.bonjour(); 
+ 
+function Poste( poste ) { 
+  this.poste = poste; 
+  this.quelPoste = function() { 
+    alert( "Vous êtes " + this.poste ); 
+  }; 
+} 
+ 
+var e = new Poste( "informaticien" ); 
+ 
+$.extend( e, p ); 
+ 
+e.bonjour();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

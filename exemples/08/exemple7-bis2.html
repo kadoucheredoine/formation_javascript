@@ -1,0 +1,32 @@
+<html>
+ <head>
+  <script>
+class Personne {
+
+ roi = false;
+ #nom = "";
+ #prenom = "";
+
+ constructor( nom, prenom ) {
+   this.#nom = nom;
+   this.#prenom = prenom;
+ }
+ 
+ hello() {
+  alert( ( this.roi ? "Sa majesté " : "Bonjour " ) + this.#nom + " " + this.#prenom );
+ }  
+ 
+}
+
+function init() {
+ let p = new Personne( "pendragon", "arthur" );
+ p.roi = true;
+ p.hello();
+
+ alert( p.#nom );	// Erreur
+}
+  </script>
+ </head>
+ <body onload="init()">
+ </body>
+</html>

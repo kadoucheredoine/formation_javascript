@@ -1,0 +1,23 @@
+<html> 
+  <head> 
+ 
+    <script data-dojo-config="async:true,test:'Hello world',baseUrl:'mesModules',packages:[{name:'t',location:'test'}]" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
+ 
+    <script type="text/javascript"> 
+require( [ "t/hello" ], 
+  function( hello ) {  
+    hello(); 
+  } 
+); 
+      require( ["dojo/dom", "dojo/_base/config", "dojo/domReady!" ], 
+       function( dom, config ) {         
+          dom.byId( "hello" ).innerHTML = config.test; 
+        } 
+      ); 
+    </script> 
+  </head> 
+  <body> 
+   <div id="hello"> 
+   </div> 
+  </body> 
+</html>

@@ -1,0 +1,24 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>  
+    <script type="text/javascript"> 
+      require( ["dojo/dom", "dojo/on", "dojo/domReady!" ], 
+        function( dom, on ) { 
+          var bouton = dom.byId( "bouton" ); 
+          on(  
+            bouton,  
+            "click",  
+            function(e) { 
+              alert( "Vous avez cliqué" ); 
+            }  
+          ); 
+        } 
+      ); 
+    </script> 
+  </head> 
+  <body> 
+    <div id="bouton"> 
+      Cliquer svp 
+    </div> 
+  </body> 
+</html>

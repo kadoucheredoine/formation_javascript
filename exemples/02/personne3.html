@@ -1,0 +1,35 @@
+<html>
+<head>
+<script>
+
+function Personne( nom, prenom ) { 
+   this.nom = nom; 
+   this.prenom = prenom;    
+   this.bonjour = function() { 
+    alert( "bonjour " + this.nom + " " + this.prenom ); 
+   } 
+   this.aurevoir = function( message ) { 
+    alert( message + " " + this.nom + " " + this.prenom ); 
+   } 
+ } 
+  
+Function.prototype.bind2 = function( contexte ) { 
+  var maFonction = this; 
+  var mesArguments = []; 
+  for ( var i = 1; i < arguments.length; i++ ) { 
+      mesArguments.push( arguments[ i ] ); 
+  } 
+  return function() { 
+    maFonction.apply( contexte, mesArguments ); 
+  } 
+} 
+ 
+var p = new Personne( "brillant", "alexandre" );   
+setTimeout( p.bonjour.bind2( p ), 1000 ); 
+setTimeout( p.aurevoir.bind2( p, "Au revoir" ), 2000 );
+
+
+</script>
+</head>
+<body></body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<script src="MooTools-Core-1.6.0.js"></script>
+		<script>
+var Personne = new Class( 
+  { 
+    initialize : function( nom, prenom ) { 
+      this.nom = nom; 
+      this.prenom = prenom; 
+    } , 
+    bonjour : function() { 
+      alert( "Bonjour " + this.prenom ); 
+    } 
+  } 
+ ); 
+ 
+var p = new Personne( "brillant", "alexandre" ); 
+p.bonjour();
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

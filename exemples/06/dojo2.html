@@ -1,0 +1,22 @@
+<html> 
+  <head> 
+    <script type="text/javascript"> 
+    var dojoConfig = { 
+      async : true, 
+      test : "Hello World" 
+    }; 
+    </script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
+    <script type="text/javascript"> 
+      require( ["dojo/dom", "dojo/_base/config", "dojo/domReady!" ], 
+        function( dom, config ) {  
+          dom.byId( "hello" ).innerHTML = config.test; 
+        } 
+      ); 
+    </script> 
+  </head> 
+  <body> 
+   <div id="hello"> 
+   </div> 
+  </body> 
+</html>

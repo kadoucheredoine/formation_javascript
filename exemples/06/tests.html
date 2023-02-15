@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Test Framework</title> 
+    <script type="text/javascript"> 
+        curl = { 
+            baseUrl : "js/amd" 
+        } 
+    </script> 
+    <script type="text/javascript" src="js/curl.js"></script> 
+    <script type="text/javascript"> 
+        curl( [ "commun", "ui/bouton/bouton", "domReady!" ] ).then( 
+            function( c, b ) { 
+                c.id( "testCommun1" ).innerHTML = "commun/id:ok"; 
+                b.creation( "testBouton1", { nom : "test" }).click( 
+                    function() { 
+                        this.dom.style.color = "red"; 
+                    } 
+                ); 
+            } 
+        ); 
+    </script> 
+</head> 
+<body> 
+    <div id="testCommun1">commun/id:erreur</div> 
+    <div id="testBouton1">ui/button/id:erreur</div> 
+</body> 
+</html>

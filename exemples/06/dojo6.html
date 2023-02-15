@@ -1,0 +1,34 @@
+<html> 
+  <head> 
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
+    <script type="text/javascript"> 
+      require( ["dojo/dom", "dojo/dom-class", "dojo/domReady!" ], 
+        function( dom, domClass ) {  
+          var node = dom.byId( "alternance" ); 
+          setInterval( function() { 
+            if ( domClass.contains( node, "bleu" ) ) { 
+              domClass.remove( node, "bleu" ); 
+              domClass.add( node, "rouge" ); 
+            } else { 
+              domClass.remove( node, "rouge" ); 
+              domClass.add( node, "bleu" );  
+            } 
+          }, 1000 ); 
+        } 
+      ); 
+    </script> 
+    <style type="text/css"> 
+    .bleu { 
+      background-color:blue; 
+    } 
+    .rouge { 
+      background-color:red; 
+    } 
+    </style> 
+  </head> 
+  <body> 
+   <div id="alternance" class="bleu"> 
+   Alternance 
+   </div>    
+  </body> 
+</html>

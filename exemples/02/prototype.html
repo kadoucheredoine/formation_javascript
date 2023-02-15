@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script src="prototype.js"></script>
+		<script>
+		
+var Personne = Class.create( 
+{ 
+  initialize : function( nom, prenom ) { 
+    this.nom = nom; 
+    this.prenom = prenom; 
+  }, 
+  bonjour : function() { 
+    alert( "Bonjour " + this.prenom ); 
+  } 
+}  
+);
+
+var p = new Personne( "brillant", "alexandre" );
+p.bonjour();
+
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

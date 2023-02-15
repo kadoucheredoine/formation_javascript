@@ -1,0 +1,23 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script> 
+    <script type="text/javascript"> 
+      require( ["dojo/dom", "dojo/query", "dojo/dom-style", 
+"dojo/domReady!" ], 
+        function( dom, query, ds ) {           
+          var titres = query( "div.titre" ); 
+          for ( var i = 0; i < titres.length; i++ ) { 
+            var titre = titres[ 0 ]; 
+            ds.set( titre, "color", "blue" ); 
+            ds.set( titre, "font-weight", "bold" ); 
+          } 
+        } 
+      ); 
+    </script> 
+  </head> 
+  <body> 
+   <div class="titre"> 
+   Mon titre 
+   </div>    
+  </body> 
+</html>

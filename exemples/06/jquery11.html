@@ -1,0 +1,20 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="jquery-1.8.1.js"></script> 
+    <script type="text/javascript"> 
+$( document ).ready(  
+  function() { 
+    $( "a" ).click( 
+      function( e ) {     
+        e.preventDefault(); 
+        alert( "Click sur " + $( this ).text() ); 
+      } 
+    ); 
+  } 
+); 
+  </script> 
+  </head> 
+  <body> 
+    <a href="#">Do</a> | <a href="#">Ré</a> | <a href="#">Mi</a> 
+  </body> 
+</html>

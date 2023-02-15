@@ -1,0 +1,26 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script> 
+    <script type="text/javascript"> 
+      require( ["dojo/dom", "dojo/query", "dojo/domReady!" ], 
+        function( dom, query ) {           
+          var items = dom.byId( "items" ); 
+          var list = query( "div.item", items ); 
+          for ( var i = 0; i < list.length; i++ ) { 
+            list[ i ].style.backgroundColor = "red"; 
+          } 
+        } 
+      ); 
+    </script> 
+  </head> 
+  <body> 
+  <div id="items"> 
+   <div class="item"> 
+   Item 1 
+   </div> 
+   <div class="item"> 
+   Item 2 
+   </div>    
+  </div> 
+  </body> 
+</html>

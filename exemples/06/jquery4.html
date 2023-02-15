@@ -1,0 +1,25 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="jquery-1.8.1.js"></script> 
+    <script type="text/javascript"> 
+    $( document ).ready(  
+       function() { 
+        $( 'div.items div:first-child' ).css( "font-size", "18px" ); 
+        $( 'div.items div:gt(0)' ).css( "font-style", "italic" ); 
+       } 
+    ); 
+    </script> 
+  </head> 
+  <body> 
+  <div class="items"> 
+    <div>Chapitre I</div> 
+    <div>Paragraphe</div> 
+    <div>Paragraphe</div> 
+  </div> 
+  <div class="items"> 
+    <div>Chapitre II</div> 
+    <div>Paragraphe</div> 
+    <div>Paragraphe</div> 
+  </div>   
+  </body> 
+</html>

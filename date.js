@@ -24,4 +24,4 @@ var Figure = (function () {
         }
 
     }
-})(figure);
+})();

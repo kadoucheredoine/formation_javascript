@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script src="prototype.js"></script>
+		<script>
+		
+var Personne = Class.create( 
+{ 
+  initialize : function( nom, prenom ) { 
+    this.nom = nom; 
+    this.prenom = prenom; 
+  }, 
+  bonjour : function() { 
+    alert( "Bonjour " + this.prenom ); 
+  } 
+}  
+);
+		
+		
+var Employe = Class.create(  
+  Personne, 
+  { 
+    initialize : function( $super, nom, prenom, poste ) { 
+      $super( nom, prenom ); 
+      this.poste = poste; 
+    }, 
+    bonjour : function( $super ) { 
+      $super(); 
+      alert( "Vous êtes " + this.poste ); 
+    } 
+  } 
+ ); 
+ 
+var p = new Personne( "brillant", "alexandre" ); 
+p.bonjour(); 
+ 
+var e = new Employe( "brillant", "alexandre", "developpeur" ); 
+e.bonjour(); 
+
+
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

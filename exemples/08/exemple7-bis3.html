@@ -1,0 +1,40 @@
+<html>
+ <head>
+  <script>
+
+class Personne {
+
+ static #compteur = 0;
+ #nom = "";
+ #prenom = "";
+
+ constructor( nom, prenom ) {
+   this.#nom = nom;
+   this.#prenom = prenom;
+   Personne.#compteur++;
+ }
+ 
+ hello() {
+  alert( "Bonjour " + this.#nom + " " + this.#prenom );
+ }  
+
+ static get compteur() {
+	return Personne.#compteur;
+ }
+
+}
+
+function init() {
+ for ( let i = 0; i < 10; i++ ) {
+	new Personne( "A" + i, "B" + i );
+ }
+ alert( "Il y a " + Personne.compteur + " personnes" );
+}
+
+  </script>
+ </head>
+ 
+ <body onload="init()">
+ </body>
+
+</html>

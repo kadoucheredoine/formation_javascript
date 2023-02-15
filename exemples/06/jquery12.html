@@ -1,0 +1,21 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="jquery-1.8.1.js"></script> 
+    <script type="text/javascript"> 
+ 
+function lectureAjax() { 
+  $.ajax( { 
+    url : "ajax.txt", 
+    dataType : "text" 
+  } ).done( 
+    function( msg ) { 
+      alert( msg ); 
+    } ); 
+} 
+ 
+    </script> 
+  </head> 
+  <body> 
+  <div onclick='lectureAjax()'>Lecture AJAX</div> 
+  </body> 
+</html>

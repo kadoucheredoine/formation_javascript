@@ -1,0 +1,32 @@
+<html> 
+  <head> 
+   
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script> <script type="text/javascript" src="../dojo-release-1.8.0/dojo/
+dojo.js"></script> <script type="text/javascript" src="../dojo-release-1.8.0/dojo/
+dojo.js"></script> 
+    <script type="text/javascript"> 
+      require( [ "dojo/_base/xhr", "dojo/query", "dojo/dom", 
+"dojo/dom-construct", "dojo/domReady!" ], 
+        function( xhr, query, dom, dc ) { 
+          xhr.get( { 
+            url : "ajax.xml", 
+            handleAs : "xml", 
+            load : function( doc ) { 
+              var items = query( "item", doc ); 
+              var res = ""; 
+              for ( var i = 0; i < items.length; i++ ) { 
+                var d = dc.create( "div",  
+                  null, 
+                  dom.byId( "contenu" ) 
+                ); 
+                d.innerHTML =  items[ i ].getAttribute( "nom" ); 
+              } 
+            } 
+          } ); 
+        } ); 
+    </script> 
+  </head> 
+  <body> 
+    <div id="contenu"></div> 
+  </body> 
+</html>

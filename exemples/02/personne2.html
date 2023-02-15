@@ -1,0 +1,20 @@
+<html>
+<head>
+<script>
+
+function Personne( nom, prenom ) { 
+   var that = this; 
+   this.nom = nom; 
+   this.prenom = prenom; 
+   this.bonjour = function() { 
+      alert( "bonjour " + that.prenom ); 
+   }; 
+  } 
+  var p = new Personne( "brillant", "alexandre" ); 
+  setTimeout( p.bonjour, 1000 );
+
+
+</script>
+</head>
+<body></body>
+</html>

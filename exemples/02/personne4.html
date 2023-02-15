@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+
+function Personne( nom, prenom ) { 
+  this.nom = nom; 
+  this.prenom = prenom; 
+} 
+ 
+var p1 = new Personne( "brillant", "alexandre" ); 
+var p2 = new Personne( "jean", "dupont" ); 
+   
+Personne.prototype.bonjour = function() { 
+  alert( "bonjour " + this.prenom ); 
+}; 
+   
+p1.bonjour(); 
+p2.bonjour(); 
+
+
+</script>
+</head>
+<body></body>
+</html>

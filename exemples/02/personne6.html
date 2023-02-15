@@ -1,0 +1,38 @@
+<html>
+<head>
+<script>
+
+function Personne( nom, prenom ) { 
+    this.nom = nom; 
+    this.prenom = prenom;     
+    if ( !Personne.prototype.bonjour ) { 
+      Personne.prototype.bonjour = function() { 
+        alert( "Bonjour " + this.prenom ); 
+      }; 
+    } 
+  } 
+ 
+  function Employe( poste, nom, prenom ) { 
+    Personne.call( this, nom, prenom ); 
+    this.poste = poste; 
+    if ( !Employe.prototype.bonjour ) { 
+      Employe.prototype.quelPoste = function() { 
+        alert( "votre poste est " + this.poste ); 
+      };  
+      Employe.prototype.bonjour = Personne.prototype.bonjour; 
+    } 
+  } 
+ 
+  var p1 = new Personne( "brillant", "alexandre" ); 
+  p1.bonjour(); 
+  var e1 = new Employe( "informaticien", "dupont", "jean" ); 
+  e1.bonjour(); 
+  e1.quelPoste();
+
+
+
+
+</script>
+</head>
+<body></body>
+</html>

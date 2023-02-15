@@ -1,0 +1,34 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="jquery-1.8.1.js"></script> 
+    <script type="text/javascript"> 
+  
+( function( $ ) { 
+    $.fn.colorise = function() { 
+      var ens = this.find( "tr:odd" ); 
+      ens.css( "background-color", "#999" ); 
+     return this; 
+    } 
+} )( jQuery ); 
+ 
+$( document ).ready(  
+  function() { 
+    $( "table" ).colorise(); 
+  }     
+); 
+ 
+  </script> 
+  </head> 
+  <body> 
+    <table> 
+      <tr> 
+        <td>2002</td> 
+        <td>1.58</td> 
+      </tr> 
+      <tr> 
+        <td>2004</td> 
+        <td>2.07</td> 
+      </tr>       
+    </table> 
+  </body> 
+</html>

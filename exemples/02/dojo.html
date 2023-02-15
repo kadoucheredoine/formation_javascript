@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+		<script>
+require(['dojo/_base/declare'], function(declare){ 
+    declare( "Personne", null, 
+    { 
+      constructor : function( nom, prenom ) { 
+        this.nom = nom; 
+        this.prenom = prenom; 
+      }, 
+      bonjour : function() { 
+        alert( "Bonjour " + this.prenom ); 
+      } 
+    } 
+    ); 
+  } 
+); 
+ 
+var p = new Personne( "brillant", "alexandre" ); 
+p.bonjour(); 
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

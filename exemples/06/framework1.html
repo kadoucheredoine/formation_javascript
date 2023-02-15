@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Test Framework</title> 
+    <script type="text/javascript"> 
+        curl = { 
+            baseUrl : "js/amd" 
+        }  
+    </script> 
+    <script type="text/javascript" src="js/curl.js"></script> 
+    <script type="text/javascript"> 
+       function horloge(){
+         var h = document.getElementsByClassName("horloge")[0];
+         h.innerHtml =new Date();
+       }
+       setInterval(horloge(),1000)
+    </script> 
+</head> 
+<body  > 
+    <div class="horloge"></div> 
+</body> 
+</html>

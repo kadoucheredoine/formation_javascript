@@ -1,0 +1,33 @@
+<html> 
+  <head> 
+    <script type="text/javascript" src="jquery.js"></script> 
+    <script type="text/javascript"> 
+  $( function() { 
+ 
+    var nom = prompt( "nom" ); 
+    var prenom = prompt( "prenom" ); 
+ 
+    $.ajax( { 
+      url : "ajaxPost.php", 
+      type : "POST", 
+      dataType : "xml", 
+      data : { 
+        "nom" : nom, 
+        "prenom": prenom 
+      } 
+    } ).done( 
+      function( doc ) { 
+        var items = $( doc ).find( "item" ); 
+        for ( var i = 0; i < items.length; i++ ) { 
+          $( "#contenu" ).append( "<div>" + $( items[ i ] ).attr( 
+"nom" ) + "</div>" ); 
+        } 
+      }  
+    ); 
+  } ); 
+    </script> 
+  </head> 
+  <body> 
+   <div id="contenu"></div> 
+  </body> 
+</html>
