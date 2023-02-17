@@ -6,14 +6,21 @@
   <body>
     <h1>Notes</h1>
     <div id="notesVue"></div>
-    <a
-      href="#"
-      onClick="notes.addItem();return false"
-      >Ajouter</a
-    >
+    <a href="#" onClick="notes.addItem();return false">Ajouter</a>
     <select onchange="notes.selectVue(this.selectedIndex)">
-         <option value="0"> par defaut</option>
-         <option value="1">Autre</option>
+      <option value="0">par defaut</option>
+      <option value="1">Autre</option>
     </select>
+    <select onchange="notes.sortData(this.value)">
+      <option value="true">Ascendent</option>
+      <option value="">decendant</option>
+    </select>
+    <div id="qcm"></div>
+    <script>
+      qcm.addQuestion("slam alycom ", "1", "2", "3");
+      qcm.addQuestion("slam alycom ", "1", "2", "3");
+      qcm.addQuestion("slam alycom ", "1", "2", "3");
+      qcm.start();
+    </script>
   </body>
 </html>
