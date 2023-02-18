@@ -91,7 +91,7 @@ var qcm = (function () {
     Array.prototype.random = function () {
         var cre = function (a, b) { return a > b ? 1 : -1; }
         if (Math.random() > 0.5)
-            cre = function (a,b) { return a > b ? -1 : 1 }
+            cre = function (a, b) { return a > b ? -1 : 1 }
 
         this.sort(cre)
     }
@@ -134,3 +134,69 @@ var qcm = (function () {
 }
 
 )()
+
+
+var table = (function () {
+
+    var table = []
+    var vue = function () {
+        var eTable = document.getElementById("table");
+        var tablen = document.createElement("table")
+        eTable.appendChild(tablen)
+
+        for (var i = 0; i < table.length; i++) {
+            var tr = document.createElement("tr");
+            tablen.appendChild(tr)
+            tr.appendChild(document.createTextNode(table[i]))
+        }
+
+    }
+    return {
+        getTable: function () {
+            let tab = [1, 2]
+            let tab2 = [3, 4]
+            table = [...tab, ...tab2]
+            vue();
+        }
+    }
+})();
+
+class Vehicule {
+    constructor(marque, modele) {
+        this.marque = marque;
+        this.modele = modele;
+    }
+}
+
+var person = {
+    name: "yazid",
+    lastname: "takfarinas",
+    date: "9/01/1987",
+    email: "yazid@gmail.com"
+}
+
+
+const  proxy = new Proxy(person, {
+    set(target, prop, value) {
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const regexDate = /^(\d{4})-(\d{2})-(\d{2})$/;
+
+        if (prop === "name" && !value.match(/[a-zA-Z]/)) {
+            return target[prop];
+        }
+
+        if (prop === "email" && !value.match(regexEmail)) {
+            return target[prop];
+        }
+        if (prop === "date" && !value.match(regexDate)) {
+            return target[prop]=value;
+        }
+       
+    }
+
+})
+
+
+proxy.name = "yazidi" ;console.log(proxy.name)
+proxy.date = "01-06-1987"; console.log(proxy.date)
+proxy.email = "yayayaya@gmail.com"; console.log(proxy.email)
